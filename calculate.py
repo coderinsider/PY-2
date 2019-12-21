@@ -28,7 +28,7 @@ hst = hc.formatmonth(2019, 12) # formatmonth(Year, month)
 # We can use this script:
 print("Team meetings will be on: ")
 for m in range(1,13):
-	cal = calendar.monthcalendar(2020, m)
+	cal = calendar.monthcalendar(2019, m)
 	weekone = cal[0]
 	weektwo = cal[1]
 	weekthree = cal[2]
@@ -36,9 +36,26 @@ for m in range(1,13):
 	weekfive  = cal[4]
 
 	if weekone[calendar.FRIDAY] != 0:
-		meetday = weekone[calendar.FRIDAY]
+		meetday = weekone[calendar.SATURDAY]
 		# More
 
 	else:
-		meetday = weektwo[calendar.FRIDAY]
+		meetday = weektwo[calendar.SATURDAY]
 	#print("%10s %2d" %(calendar.month_name[m], meetday))
+
+
+
+# new testing
+dayone=input("Enter your SELECT MONTH: ")
+dayoneformat = int(dayone.upper())
+# daytwo=input("Enter your second day:")
+# daytwoformat=daytwo.upper()
+cal = calendar.monthcalendar(2020, dayoneformat)
+for ca in cal:
+	if ca[calendar.SATURDAY] != 0:
+		meetday =  ca[calendar.SATURDAY]
+		print("%10s %5d %4s" %(calendar.month_name[dayoneformat] , meetday, str("SATURDAY")))
+
+	if ca[calendar.SUNDAY] != 0:
+		meetday2 = ca[calendar.SUNDAY]
+		print("%10s %5d %4s" %(calendar.month_name[dayoneformat] , meetday2, str("SUNDAY")))		
