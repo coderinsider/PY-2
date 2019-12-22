@@ -46,11 +46,12 @@ for m in range(1,13):
 
 
 # new testing
+fillyear=input("Enter your select year: ")
 dayone=input("Enter your SELECT MONTH: ")
 dayoneformat = int(dayone.upper())
 # daytwo=input("Enter your second day:")
 # daytwoformat=daytwo.upper()
-cal = calendar.monthcalendar(2020, dayoneformat)
+cal = calendar.monthcalendar(int(fillyear), dayoneformat)
 for ca in cal:
 	if ca[calendar.SATURDAY] != 0:
 		meetday =  ca[calendar.SATURDAY]
